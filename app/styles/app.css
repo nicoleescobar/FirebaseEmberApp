@@ -1,0 +1,33 @@
+body .container {
+  padding: 20px;
+}
+
+body .container form {
+  margin: 20px 0;
+}
+
+ul {
+  list-style-type: none;
+  border-left: 1px solid #ddd;
+}
+
+ul li {
+  background-color: #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: right;
+}
+
+li strong {
+  display: block;
+  text-align: left;
+}
+
+li p {
+  text-align: left;
+}
+
+.task-done {
+  text-decoration: line-through;
+}

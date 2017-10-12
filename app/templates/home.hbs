@@ -1,0 +1,34 @@
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <h3> Todo - List With Firebase & Ember</h3>
+    <button type="button" name="button" {{action "logOut"}}> Logout </button>
+  </nav>
+
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1"> New Task </label>
+      {{input value=task.name class="form-control" placeholder="Enter Task Name"}}
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1"> Description </label> <br>
+      {{textarea value=task.descp class="form-control"}}
+    </div>
+
+    <button type="button" class="btn btn-primary" {{action "addNewTask"}}> Add </button>
+  </form>
+
+  <h5> List Items </h5>
+
+  <ul>
+    {{#each tasks as |task index|}}
+    <li class="{{if task.isDone 'task-done'}}">
+      <strong> {{task.name}} </strong>
+      <p> {{task.descp}} </p>
+      {{#unless task.isDone}}
+      <button type="button" class="btn btn-primary" {{action "markTaskAsDone" index}}> Mark as Done </button>
+      {{/unless}}
+    </li>
+    {{/each}}
+  </ul>
+</div>
